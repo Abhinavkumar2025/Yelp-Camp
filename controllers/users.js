@@ -49,16 +49,13 @@ module.exports.login = (req, res) => {
     res.redirect(redirectUrl);
 }
 
-module.exports.logout = async (req, res, next) => {
-    try {
-        await req.logout(); 
+module.exports.logout = (req, res, next) => {
+    req.logout(function (err) {
+        if (err) return next(err);
         req.flash('success', 'Goodbye!');
-        res.redirect('/campgrounds');
-    } catch (err) {
-        next(err);
-    }
+        return res.redirect('/campgrounds');
+    });
 };
-
 
 // module.exports.logout = (req, res, next) => {
 //     req.logout(function (err) {
