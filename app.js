@@ -113,22 +113,47 @@ app.use(
         directives: {
             defaultSrc: [],
             connectSrc: ["'self'", ...connectSrcUrls],
-            scriptSrc: ["'self'", "'unsafe-inline'", ...scriptSrcUrls],
-            styleSrc: ["'self'", "'unsafe-inline'", ...styleSrcUrls],
-            workerSrc: ["'self'", "blob:"],
-            objectSrc: [],
-            imgSrc: [
-                "'self'",
-                "blob:",
-                "data:",
-                `https://res.cloudinary.com/${process.env.CLOUDINARY_CLOUD_NAME}/`,
-                "https://images.unsplash.com/",
-                "https://api.maptiler.com/",    // REQUIRED
+            scriptSrc: ["'self'", "'unsafe-inline'",
+                "https://cdn.jsdelivr.net",
+                "https://cdn.maptiler.com/",
+                "https://cdnjs.cloudflare.com/",
+                "https://kit.fontawesome.com/",
+                "https://stackpath.bootstrapcdn.com/",
             ],
-            fontSrc: ["'self'", ...fontSrcUrls],
-        },
+            styleSrc: ["'self'", "'unsafe-inline'",
+                "https://cdn.jsdelivr.net",
+                "https://cdn.maptiler.com/",
+                "https://fonts.googleapis.com/",
+            ],
+            imgSrc: ["'self'", "blob:", "data:", "https://cdn.jsdelivr.net"],
+            fontSrc: ["'self'", "https://fonts.gstatic.com"],
+        }
     })
 );
+
+
+
+// app.use(
+//     helmet.contentSecurityPolicy({
+//         directives: {
+//             defaultSrc: [],
+//             connectSrc: ["'self'", ...connectSrcUrls],
+//             scriptSrc: ["'self'", "'unsafe-inline'", ...scriptSrcUrls],
+//             styleSrc: ["'self'", "'unsafe-inline'", ...styleSrcUrls],
+//             workerSrc: ["'self'", "blob:"],
+//             objectSrc: [],
+//             imgSrc: [
+//                 "'self'",
+//                 "blob:",
+//                 "data:",
+//                 `https://res.cloudinary.com/${process.env.CLOUDINARY_CLOUD_NAME}/`,
+//                 "https://images.unsplash.com/",
+//                 "https://api.maptiler.com/",    // REQUIRED
+//             ],
+//             fontSrc: ["'self'", ...fontSrcUrls],
+//         },
+//     })
+// );
 
 
 app.use(passport.initialize());
