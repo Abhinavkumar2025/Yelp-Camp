@@ -112,24 +112,56 @@ app.use(
     helmet.contentSecurityPolicy({
         directives: {
             defaultSrc: [],
-            connectSrc: ["'self'", ...connectSrcUrls],
-            scriptSrc: ["'self'", "'unsafe-inline'",
-                "https://cdn.jsdelivr.net",
+
+            connectSrc: [
+                "'self'",
+                "https://api.maptiler.com/",
+                "https://cdn.jsdelivr.net/",
                 "https://cdn.maptiler.com/",
-                "https://cdnjs.cloudflare.com/",
+            ],
+
+            scriptSrc: [
+                "'self'",
+                "'unsafe-inline'",
+                "https://cdn.jsdelivr.net/",
+                "https://cdn.maptiler.com/",
                 "https://kit.fontawesome.com/",
+                "https://cdnjs.cloudflare.com/",
                 "https://stackpath.bootstrapcdn.com/",
             ],
-            styleSrc: ["'self'", "'unsafe-inline'",
-                "https://cdn.jsdelivr.net",
-                "https://cdn.maptiler.com/",
+
+            styleSrc: [
+                "'self'",
+                "'unsafe-inline'",
+                "https://cdn.jsdelivr.net/",
                 "https://fonts.googleapis.com/",
+                "https://cdn.maptiler.com/",
             ],
-            imgSrc: ["'self'", "blob:", "data:", "https://cdn.jsdelivr.net"],
-            fontSrc: ["'self'", "https://fonts.gstatic.com"],
-        }
+
+            imgSrc: [
+                "'self'",
+                "blob:",
+                "data:",
+                "https://res.cloudinary.com/",
+                "https://images.unsplash.com/",
+                "https://api.maptiler.com/",
+                "https://cdn.maptiler.com/",
+                "https://cdn.jsdelivr.net/",
+            ],
+
+            fontSrc: [
+                "'self'",
+                "https://fonts.googleapis.com",
+                "https://fonts.gstatic.com",
+                "https://cdn.jsdelivr.net/",
+            ],
+
+            workerSrc: ["'self'", "blob:"],
+            objectSrc: [],
+        },
     })
 );
+
 
 
 
