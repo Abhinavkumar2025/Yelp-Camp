@@ -50,72 +50,58 @@ This application was built as part of my **full-stack learning journey**, with a
 
 ---
 
-## Project Structure
+##  Project Structure
+```txt
 YELPCAMP/
-│
 ├── cloudinary/
 │   └── index.js
-│
 ├── controllers/
 │   ├── campgrounds.js
 │   ├── reviews.js
 │   └── users.js
-│
 ├── models/
 │   ├── campground.js
 │   ├── review.js
 │   └── user.js
-│
 ├── routes/
 │   ├── campgrounds.js
 │   ├── reviews.js
 │   └── users.js
-│
 ├── public/
 │   ├── javascripts/
 │   │   ├── clusterMap.js
 │   │   ├── showPageMap.js
 │   │   └── validateForms.js
-│   │
 │   └── stylesheets/
 │       ├── home.css
 │       └── stars.css
-│
 ├── views/
 │   ├── campgrounds/
 │   │   ├── index.ejs
 │   │   ├── show.ejs
 │   │   ├── new.ejs
 │   │   └── edit.ejs
-│   │
 │   ├── users/
 │   │   ├── login.ejs
 │   │   └── register.ejs
-│   │
 │   ├── layouts/
 │   │   └── boilerplate.ejs
-│   │
 │   ├── partials/
 │   │   ├── navbar.ejs
 │   │   ├── footer.ejs
 │   │   └── flash.ejs
-│   │
 │   ├── home.ejs
 │   └── error.ejs
-│
 ├── seeds/
 │   ├── cities.js
 │   ├── seedHelpers.js
 │   └── index.js
-│
 ├── uploads/
 │   └── (uploaded images)
-│
 ├── utils/
 │   ├── catchAsync.js
 │   ├── ExpressErrors.js
 │   └── mongoSanitizeV5.js
-│
 ├── .env
 ├── .gitignore
 ├── app.js
@@ -123,6 +109,7 @@ YELPCAMP/
 ├── schemas.js
 ├── package.json
 └── package-lock.json
+```
 The project follows an MVC-based architecture with clear separation of concerns for scalability and maintainability.
 
 ---
